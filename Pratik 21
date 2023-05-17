@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Pratik21 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Elmasın yüksekliğini girin (tek sayı olmalı): ");
+        int yukseklik = scanner.nextInt();
+
+        int boslukSayisi = yukseklik / 2;
+        int yildizSayisi = 1;
+
+        for (int i = 1; i <= yukseklik; i += 2) {
+            for (int j = 0; j < boslukSayisi; j++) {
+                System.out.print(" ");
+            }
+
+            for (int j = 0; j < yildizSayisi; j++) {
+                System.out.print("*");
+            }
+
+            System.out.println();
+
+            boslukSayisi--;
+            yildizSayisi += 2;
+        }
+
+        boslukSayisi = 1;
+        yildizSayisi = yukseklik - 2;
+
+        for (int i = yukseklik - 2; i >= 1; i -= 2) {
+            for (int j = 0; j < boslukSayisi; j++) {
+                System.out.print(" ");
+            }
+
+            for (int j = 0; j < yildizSayisi; j++) {
+                System.out.print("*");
+            }
+
+            System.out.println();
+
+            boslukSayisi++;
+            yildizSayisi -= 2;
+        }
+
+        scanner.close();
+    }
+}
